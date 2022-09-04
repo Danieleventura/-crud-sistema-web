@@ -1,0 +1,105 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Editar Perfil</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Empresa (desabilitado)</label>
+                                        <input type="text" class="form-control" disabled placeholder="Company" value="Serviços Saúde Company">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control" placeholder="Username" value="{{user.username}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email </label>
+                                        <input type="email" class="form-control" placeholder="Email" value="{{user.email}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Primeiro nome</label>
+                                        <input type="text" class="form-control" value="{{user.firstName}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Segundo nome</label>
+                                        <input type="text" class="form-control"  value="{{user.secondName}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Endereço</label>
+                                        <input type="text" class="form-control" value="{{user.address}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Cidade</label>
+                                        <input type="text" class="form-control" value="{{user.city}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>País</label>
+                                        <input type="text" class="form-control" value="{{user.country}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Código Postal</label>
+                                        <input type="number" class="form-control" value="{{user.postalCode}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill " (click)="showNotification('top','center')">Atualizar Perfil</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="assets/img/medical.png" alt="..."/>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <a >
+                                <img class="avatar border-gray" src="assets/img/user.png" alt="..."/>
+
+                                <h4 class="title">{{user.name}}<br />
+                                    <small>{{user.username}}</small>
+                                </h4>
+                            </a>
+                        </div>
+                        <p class="description text-center">Funcionário<br>
+                        </p>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

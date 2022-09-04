@@ -1,0 +1,118 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Unidade de saúde</h4>
+                    </div>
+                    <div class="content" >
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <p >{{data.name}}</p>
+                                        <label >Telefone</label>
+                                        <p >{{data.phone}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>CNES</label>
+                                        <p>{{data.CNES}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Dependência</label>
+                                        <p>{{data.dependency}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label >Gestão</label>
+                                        <p>{{data.management}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Tipo Estabelecimento</label>
+                                        <p>{{data.type}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label>Especialidades do estabelecimento </label>
+                                            <p *ngFor="let especialidade of data.speciality">{{especialidade}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label>Horário de Funcionamento</label>
+                                            <p *ngFor="let day of data.time">{{day}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Endereço </label>
+                                        <p>{{data.address}}</p>
+                                        <label>Cidade </label>
+                                        <p>{{data.city}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Bairro </label>
+                                        <p>{{data.district}}</p>
+                                        <label>CEP</label>
+                                        <p> - </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Latitude </label>
+                                        <p>{{data.lat}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Longitude </label>
+                                        <p>{{data.lng}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button type="submit" class="btn btn-info btn-fill " id="btn-save" (click)="requestPage(data.id)">Editar Unidade de saúde</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-user" id="container-map">
+                    <ngui-map zoom="16" [styles]="stylesHide.hide" center="{{data.lat}},{{data.lng}}" [disableDefaultUI]="true" [keyboardShortcuts]="false">
+                        <marker [position]="[data.lat,data.lng]" [icon]="marker" ></marker>
+                    </ngui-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Cadastrar Unidade de saúde</h4>
+                        <label>Os campos marcados com asterisco (<label class="required" title="campo obrigatório">*</label>) são de preenchimento
+                        obrigatório.</label>
+                    </div>
+                    <div class="content" >
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="text" class="form-control" required>
+                                        <label>Telefone <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>CNES <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="number" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label >Dependência</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label >Gestão</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Tipo Estabelecimento <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label>Especialidades do estabelecimento <label class="required" title="campo obrigatório">*</label></label>
+                                            <textarea style="resize: none;" disabled rows="5" class="form-control" placeholder="Especialidades médicas" ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 container-modal">
+                                    <button data-toggle="modal" data-target="#exampleModalLong" class="btn btn-info btn-fill btn-save"> Adicionar especialidades</button>
+                                    <div class="modal fade" id="exampleModalLong" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLongTitle">ESPECIALIDADES</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Informe as especialidades médicas do estabelecimento</p>
+                                                    <div class="form-group">
+                                                        <form *ngFor="let data of dataJson" >
+                                                            <input  type="checkbox"  id="{{data.id}}" name="{{data.name}}" value="{{data.name}}">
+                                                            <label  class="label-model" for="{{data.name}}">{{data.name}}</label><br>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" type="submit" class="btn btn-info btn-fill btn-save" data-dismiss="modal">
+                                                        Salvar</button>
+                                                  <button type="button" class="btn btn-secondary btn btn-info btn-fill btn-delete" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label>Horário de Funcionamento <label class="required" title="campo obrigatório">*</label></label>
+                                            <div class="container-hours">
+                                                <div class="form-group">
+                                                    <div class="container-time">
+                                                        <div class="days">
+                                                            <div class="title-hours">
+                                                                <label>Dia da Semana</label>
+                                                            </div>
+                                                            <form *ngFor="let day of daysWeek" >
+                                                                <input  type="checkbox"  id="{{day}}" name="{{day}}" value="{{day}}">
+                                                                <label  class="label-model" for="{{day}}">{{day}}</label><br>
+                                                            </form>
+                                                        </div>
+                                                        <div class="hours">
+                                                            <div class="title-hours">
+                                                                <label>Horário</label>
+                                                            </div>
+                                                            <form *ngFor="let day of daysWeek" >
+                                                                <input type="time" id="appt" name="{{day}}">
+                                                                <label  class="label-model time">ás</label>
+                                                                <input type="time" id="appt" name="{{day}}"><br>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Endereço <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="text" class="form-control" required>
+                                        <label>Cidade <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Bairro <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="text" class="form-control" required>
+                                        <label>CEP</label>
+                                        <input type="number" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Latitude <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="number" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Longitude <label class="required" title="campo obrigatório">*</label></label>
+                                        <input type="number" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button type="submit" class="btn btn-info btn-fill btn-save" (click)="requestPage()" >Salvar Unidade de saúde</button>
+                                <button type="submit" class="btn btn-info btn-fill btn-delete" >Cancelar Unidade de saúde</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-user" id="container-map">
+                    <ngui-map zoom="13" [styles]="stylesHide.hide" center="-7.225062934620533,-35.888633461401405" [disableDefaultUI]="true" [keyboardShortcuts]="false">
+
+                    </ngui-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

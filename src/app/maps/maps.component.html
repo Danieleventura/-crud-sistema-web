@@ -1,0 +1,10 @@
+<div class="main-content">
+
+          <ngui-map zoom="15" style="margin-top:60px;height: 100%; width: 100%; position: absolute;top: 0px;
+                left: 0px; background-color: rgb(229, 227, 223);" [styles]="stylesHide.hide" center="{{dataJson[0].lat}},{{dataJson[0].lng}}" [disableDefaultUI]="true"
+                [keyboardShortcuts]="false" [fullscreenControl]="true">
+              <marker *ngFor="let data of dataJson"  (click)="infoWindow(data)"  [position]="[data.lat,data.lng]" [icon]="marker" >
+
+              </marker>
+            </ngui-map>
+</div>

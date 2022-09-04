@@ -1,0 +1,24 @@
+.avatar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  img:hover{
+    width: 43px;
+    height: 43px;
+  }
+  p{
+    color: #9a949a;
+    margin-right: 10px;
+  }
+  i{
+    font-size: 30px;
+  }
+}

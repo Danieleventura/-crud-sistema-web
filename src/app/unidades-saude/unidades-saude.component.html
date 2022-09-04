@@ -1,0 +1,79 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">{{countData}} Unidades de saúde cadastradas</h4>
+                    </div>
+                    <div class="header">
+                        <div class="icons">
+                            <div class="dropdown">
+                                <a  class="dropdown-toggle btn-icon" data-toggle="dropdown">
+                                    <i class="pe-7s-plus"></i>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="/create">Cadastrar nova Unidade de Saúde</a></li>
+                                  <li><a href="/unidade">Importar dados </a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle btn-icon" data-toggle="dropdown">
+                                    <i class="pe-7s-download"></i>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="/unidade">Exportar arquivo XLS</a></li>
+                                  <li><a href="/unidade">Exportar arquivo PDF</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <select name="select">
+                                    <option value="valor1" selected>ID</option>
+                                    <option value="valor2">Ordem alfabética</option>
+                                    <option value="valor3">Tipo Estabelecimento</option>
+                                    <option value="valor3">Cidade</option>
+                                    <option value="valor3">Bairro</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="container-searchbar">
+                            <div class="group">
+                                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                                <input placeholder="Pesquisar" type="search" class="input">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th >ID</th>
+                                        <th >CNES</th>
+                                        <th >Nome</th>
+                                        <th >Tipo Estabelecimento</th>
+                                        <th >Cidade</th>
+                                        <th >Bairro</th>
+                                        <th >Telefone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of dataJson" class="row-table-bnt" (click)="requestPage(data.id)">
+                                        <td >{{data.id}}</td>
+                                        <td >{{data.CNES}}</td>
+                                        <td >{{data.name}}</td>
+                                        <td >{{data.type}}</td>
+                                        <td >{{data.city}}</td>
+                                        <td >{{data.district}}</td>
+                                        <td >{{data.phone}}</td>
+                                    </tr>
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

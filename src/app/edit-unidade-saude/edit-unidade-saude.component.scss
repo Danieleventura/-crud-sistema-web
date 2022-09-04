@@ -1,0 +1,72 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    #btn-save{
+        margin-right: 10px;
+        background-color: #286dc5 !important;
+        border:  none;
+    }
+    #btn-delete{
+        background-color: #fb404b !important;
+        border:  none;
+    }
+}
+
+button:hover{
+    opacity: 0.7;
+}
+#container-map{
+    width: 300px;
+    height: 400px;
+}
+ngui-map{
+    height: 100%; 
+    width: 100%; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.label-modal{
+    margin-right: 20px !important;
+}
+
+.container-modal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+textarea{
+    height: 100px;
+    width: 650px;
+}
+
+.container-modal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-time{
+    display: flex;
+    flex-direction: row;
+    .hours{
+        margin-left: 30px;
+        .time{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.row{
+    margin-bottom: 20px;
+}
+
+.required{
+    color: #c91111;
+    font-size: 16px;
+}

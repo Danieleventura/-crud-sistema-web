@@ -1,0 +1,25 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    #btn-save{
+        margin-right: 10px;
+        background-color: #286dc5 !important;
+        border:  none;
+    }
+}
+
+button:hover{
+    opacity: 0.7;
+}
+#container-map{
+    width: 300px;
+    height: 400px;
+}
+ngui-map{
+    height: 100%; 
+    width: 100%; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
